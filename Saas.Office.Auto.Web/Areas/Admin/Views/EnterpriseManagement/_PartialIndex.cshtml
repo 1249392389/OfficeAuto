@@ -1,0 +1,27 @@
+﻿@using Saas.Office.Auto.DataAccess
+@model IEnumerable<TSysEnterprises>
+<table>
+    <thead>
+        <tr></tr>
+        <tr>
+
+            <td>@Html.DisplayNameFor(m => m.EnterpriseName)</td>
+            <td>@Html.DisplayNameFor(m => m.EnterpriseCode)</td>
+            <td>@Html.DisplayNameFor(m => m.Validity)</td>
+            <td>@Html.DisplayNameFor(m => m.MaxUser)</td>
+            <td>@Html.DisplayNameFor(m => m.CreatedDate)</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.EnterpriseName)</td>
+                <td>@Html.DisplayFor(m => item.EnterpriseCode)</td>
+                <td>@Html.DisplayFor(m => item.Validity)</td>
+                <td>@Html.DisplayFor(m => item.MaxUser)</td>
+                <td>@Html.DisplayFor(m => item.CreatedDate)</td>
+            </tr>
+        }
+    </tbody>
+</table>

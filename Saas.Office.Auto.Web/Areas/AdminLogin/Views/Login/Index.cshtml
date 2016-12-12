@@ -1,0 +1,81 @@
+﻿@using Saas.Office.Auto.Model
+@model UserLoginViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminLogin/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="col-md-6 login-container bs-reset">
+    <div class="login-content" style="margin-top:150px">
+        <h1>从这里开始你想要的生活...</h1>
+        <p> 使用OfficeAuto，让你的生活变得更完美！ </p>
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "login-form" }))
+        {
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                <span>请输入用户名和密码 </span>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <i class="fa fa-user"></i>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control placeholder-no-fix", placeholder = "用户名" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-lock"></i>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-solid placeholder-no-fix", placeholder = "密码" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                @Html.TextBoxFor(m => m.ValidateCode, new { @class = "form-control form-control-solid placeholder-no-fix", placeholder = "验证码" })
+                            </div>
+                            <img style="cursor: pointer; vertical-align:middle" src="@Url.Action("VerifyImage", "Login")" id="VerifyImage" title="看不清？点击换一个" onclick="javascript:document.getElementById('VerifyImage').src='@Url.Action("VerifyImage", "Login")?r='+Math.random();return false;">
+                            <div>@Html.ValidationMessage("error") </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="rem-password">
+                        <label class="rememberme mt-checkbox mt-checkbox-outline">
+                            @Html.CheckBoxFor(m => m.RememberState) 记住我
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-8 text-right">
+                    <div class="forgot-password">
+                        <a href="javascript:;" id="forget-password" class="forget-password">忘记密码？</a>
+                    </div>
+                    <button class="btn green" type="submit">登录</button><i class="m-icon-swapright m-icon-white"></i>
+                </div>
+            </div>
+        }
+        <form class="forget-form" action="javascript:;" method="post">
+            <h3 class="font-green">忘记密码</h3>
+            <p> 请输入您的电子邮箱找回密码 </p>
+            <div class="form-group">
+                <input class="form-control placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" />
+            </div>
+            <div class="form-actions">
+                <button type="button" id="back-btn" class="btn green btn-outline">返回</button>
+                <button type="submit" class="btn btn-success uppercase pull-right">提交</button>
+            </div>
+        </form>
+    </div>
+    <div class="login-footer">
+        <div class="row bs-reset">
+            <div class="col-xs-5 bs-reset">
+            </div>
+            <div class="col-xs-7 bs-reset">
+                <div class="login-copyright text-right">
+                    <p>Copyright &copy; 王凯 2016</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

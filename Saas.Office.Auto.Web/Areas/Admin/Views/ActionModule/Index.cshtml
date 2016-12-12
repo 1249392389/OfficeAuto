@@ -1,0 +1,23 @@
+﻿@using Saas.Office.Auto.DataAccess
+@model IEnumerable<TSysLogs>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@*@using (Html.BeginForm("Index", "ActionModule", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.LogLevel)
+    @Html.TextBoxFor(m => m.Message)
+    @Html.TextBoxFor(m => m.UserId)
+    @Html.TextBoxFor(m => m.EnterpriseId)
+    <input type="submit" value="tijiao" />
+}*@
+@foreach (var item in Model)
+{
+    @Html.DisplayFor(m=>item.LogLevel)
+    @Html.DisplayFor(m => item.Message)
+    @Html.DisplayFor(m => item.UserId)
+    @Html.DisplayFor(m => item.EnterpriseId)
+}

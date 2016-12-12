@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SAAS-OA管理平台</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*自定义样式始*@
+    @Styles.Render("~/Content/css/global");
+    @Styles.Render("~/Content/css/global/style");
+    @Styles.Render("~/Content/css/global/layout");
+    @Styles.Render("~/Content/css/plugins/datatables");
+    @*自定义样式末*@
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    @*模板页页头部分始*@
+    <div class="page-header navbar navbar-fixed-top">
+        @{Html.RenderAction("SysHeader", "Header"); }
+    </div>
+    @*模板页页头部分末*@
+    <div class="clearfix"> </div>
+    @*模板页内容部分始*@
+    <div class="page-container">
+        @*模板页菜单部分始*@
+        <div class="page-sidebar-wrapper">
+            @{Html.RenderAction("SysMenu", "Menu"); }
+        </div>
+        @*模板页菜单部分末*@
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                <section>
+                    @RenderBody()
+                </section>
+            </div>
+        </div>
+    </div>
+    @*模板页内容部分末*@
+    @*模板页页脚部分始*@
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            2016&copy; 王凯-毕业设计（SAAS-OA)
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    @*模板页页脚部分末*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/js/core")
+    @Scripts.Render("~/Content/js/global")
+    @Scripts.Render("~/Content/js/plugins/model")
+    @Scripts.Render("~/Content/js/layout")
+    @Scripts.Render("~/Content/js/plugins/datatables")
+    @Scripts.Render("~/Content/js/plugins/mvcpager")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
