@@ -15,7 +15,7 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
         public ActionResult Index()
         {
             
-            return View(db.TSysLogs.ToList());
+            return View();
         }
         [HttpPost]
         public ActionResult Index(TSysLogs model)

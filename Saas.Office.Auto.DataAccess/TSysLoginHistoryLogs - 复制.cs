@@ -7,25 +7,30 @@ using System.Threading.Tasks;
 
 namespace Saas.Office.Auto.DataAccess
 {
-    public class TSysEnterprises
+    public class TSysLoginHistoryLogs
     {
         public int Id { get; set; }
+
         [Required]
-        public string EnterpriseName { get; set; }
+        public string UserName { get; set; }
+
         [Required]
-        public int MaxUser { get; set; }
+        public string HostName { get; set; }
+
         [Required]
-        [StringLength(10)]
-        public string EnterpriseCode { get; set; }
-        public DateTime? Validity { get; set; }
+        public string HostIP { get; set; }
+
         [Required]
-        public string IsEnabled { get; set; }
+        public string LoginCity { get; set; }
+
+        public DateTime LoginDate { get; set; }
+
         public DateTime CreatedDate { get; set; }
+
         public DateTime UpdatedDate { get; set; }
+
         public int UserId { get; set; }
         public int EnterpriseId { get; set; }
-        public string IsSystemEnterprise { get; set; }
-        public virtual ICollection<TSysUsers> TSysUsers { get; set; }
-        public virtual ICollection<TSysDepartments> TSysDepartments { get; set; }
+        public virtual TSysUsers TSysUsers { get; set; }
     }
 }
