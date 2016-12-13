@@ -156,6 +156,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Webdiyer.MvcPager, Version=3.0.2015.802, Culture=neutral, PublicKeyToken=f6872c5a09aed72c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Webdiyer.MvcPager.3.0.1.1\lib\Webdiyer.MvcPager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -5885,6 +5889,8 @@
     </Content>
     <Content Include="Areas\Admin\Views\EnterpriseManagement\Index.cshtml" />
     <Content Include="Areas\Admin\Views\EnterpriseManagement\_PartialIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\EnterpriseManagement\PopAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\EnterpriseManagement\_PartialAdd.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

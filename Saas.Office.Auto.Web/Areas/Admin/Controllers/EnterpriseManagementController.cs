@@ -8,6 +8,7 @@ using Saas.Office.Auto.GlobalUtilities.ValidateCode;
 using Saas.Office.Auto.IService;
 using Saas.Office.Auto.Service;
 using Saas.Office.Auto.DataAccess;
+using Webdiyer.WebControls.Mvc;
 
 namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
 {
@@ -19,10 +20,24 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
             this._sysEnterpriseService = sysEnterpriseService;
         }
         // GET: Admin/EnterpriseManagement
-        public ActionResult Index()
+        public ActionResult Index(int pageNum = 1)
         {
-            IEnumerable<TSysEnterprises> List = _sysEnterpriseService.GetSysEnterpriseList();
-            return View(List);
+            //IEnumerable<TSysEnterprises> List = _sysEnterpriseService.GetSysEnterpriseList();
+            //return View(List);
+
+            EnterpriseManagementSearchModel model = new EnterpriseManagementSearchModel();
+            PagedList<EnterpriseManagementViewModel> pagelist = _sysEnterpriseService.SearchHandle(model, pageNum);
+            if (Request.IsAjaxRequest())
+                return PartialView("_PartialIndex", pagelist);
+            return View(pagelist);
         }
+        #region Add
+        //[HttpPost]
+        public PartialViewResult ShowPop()
+        {
+            EnterpriseManagementViewModel model = new EnterpriseManagementViewModel();
+            return PartialView("PopAdd", model);
+        }
+        #endregion
     }
 }

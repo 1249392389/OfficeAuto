@@ -65,6 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysEnterpriseRepository.cs" />
     <Compile Include="SysUserRepository.cs" />
+    <Compile Include="Utilities\UtilitiesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Saas.Office.Auto.DataAccess\Saas.Office.Auto.Admin.DataAccess.csproj">
@@ -78,6 +79,10 @@
     <ProjectReference Include="..\Saas.Office.Auto.IRepository\Saas.Office.Auto.Admin.IRepository.csproj">
       <Project>{564a5ded-87fe-47f8-9734-86d54824ea1e}</Project>
       <Name>Saas.Office.Auto.Admin.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Saas.Office.Auto.Model\Saas.Office.Auto.Admin.Model.csproj">
+      <Project>{ABA01F0B-0928-4774-8C19-618F763CDAB6}</Project>
+      <Name>Saas.Office.Auto.Admin.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Saas.Office.Auto.Model
 {
-    public class SysEnterpriseViewModel
+    public class EnterpriseManagementViewModel
     {
         public int Id { get; set; }
         [Required]
@@ -23,11 +23,11 @@ namespace Saas.Office.Auto.Model
         public string IsEnabled { get; set; }
         public DateTime CreatedDate { get; set; }
         #region PoToBo
-        public SysEnterpriseViewModel()//PO   数据库模型     BO    视图模型
+        public EnterpriseManagementViewModel()//PO   数据库模型     BO    视图模型
         {
         }
 
-        public SysEnterpriseViewModel(TSysEnterprises sysUsers)
+        public EnterpriseManagementViewModel(TSysEnterprises sysUsers)
         {
             this.Id = sysUsers.Id;
             this.EnterpriseName = sysUsers.EnterpriseName;
@@ -48,5 +48,9 @@ namespace Saas.Office.Auto.Model
         //    return sysUser;
         //}
         #endregion
+    }
+    public class EnterpriseManagementSearchModel
+    {
+        public string EnterpriseName { get; set; }
     }
 }

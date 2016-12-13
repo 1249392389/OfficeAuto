@@ -1,0 +1,33 @@
+﻿@using Saas.Office.Auto.Model
+@model EnterpriseManagementViewModel
+<div class="row" id="contentTable">
+    <div class="col-md-12">
+        <div class="form-group">
+            @*@Html.Partial("_alerts")*@
+            <div style="display:none">
+                @*@Html.Partial("_validationSummary")*@
+            </div>
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.EnterpriseName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.EnterpriseName, new { @class = "form-control form-control-solid placeholder-no-fix", placeholder = "企业名称" })
+            @Html.ValidationMessageFor(m => m.EnterpriseName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MaxUser, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.MaxUser, new { @class = "form-control form-control-solid placeholder-no-fix", placeholder = "最大用户量" })
+            @Html.ValidationMessageFor(m => m.MaxUser, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Validity, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Validity, new { @class = "form-control form-control-solid placeholder-no-fix", placeholder = "有效期" })
+            @Html.ValidationMessageFor(m => m.Validity, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsEnabled, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.IsEnabled, new { @class = "form-control form-control-solid placeholder-no-fix", placeholder = "是否可用" })
+            @Html.ValidationMessageFor(m => m.IsEnabled, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
