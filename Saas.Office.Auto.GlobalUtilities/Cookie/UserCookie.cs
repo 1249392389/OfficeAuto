@@ -20,7 +20,9 @@ namespace Saas.Office.Auto.GlobalUtilities.Cookie
             HttpCookie useridCookie = HttpContext.Current.Request.Cookies[CookieKeys.UserId];
             if (useridCookie == null)
                 useridCookie = new HttpCookie(CookieKeys.UserId);
-            useridCookie.Value = RSAUtil.Encrypt(userId.ToString());
+            //useridCookie.Value = RSAUtil.Encrypt(userId.ToString());
+            //useridCookie.Expires = DateTime.Now.AddDays(7);
+            useridCookie.Value = userId.ToString();
             useridCookie.Expires = DateTime.Now.AddDays(7);
             //useridCookie.Expires = DateTime.Now.AddDays(ConfigManager.Current.Settings.CookieExpires);
             HttpContext.Current.Response.Cookies.Add(useridCookie);
@@ -40,9 +42,10 @@ namespace Saas.Office.Auto.GlobalUtilities.Cookie
 
             if (rememberMeCookie == null)
                 rememberMeCookie = new HttpCookie(CookieKeys.RememberMe);
-
-            rememberMeCookie.Value = RSAUtil.Encrypt(userName);
-            rememberMeCookie.Expires = DateTime.Now.AddDays(ConfigManager.Current.Settings.CookieExpires);
+            rememberMeCookie.Value = userName;
+            rememberMeCookie.Expires = DateTime.Now.AddDays(7);
+            //rememberMeCookie.Value = RSAUtil.Encrypt(userName);
+            //rememberMeCookie.Expires = DateTime.Now.AddDays(ConfigManager.Current.Settings.CookieExpires);
             HttpContext.Current.Response.Cookies.Add(rememberMeCookie);
         }
 

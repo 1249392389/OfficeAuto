@@ -14,6 +14,7 @@ namespace Saas.Office.Auto.Model
         public string Password { get; set; }
         public string ValidateCode { get; set; }
         public bool RememberState { get; set; }
+        public List<SystemRoleViewModel> systemRoleViewModel { set; get; }
         #region PoToBo
         public UserLoginViewModel()//PO   数据库模型     BO    视图模型
         {
@@ -24,6 +25,12 @@ namespace Saas.Office.Auto.Model
             this.Id = sysUsers.Id;
             this.UserName = sysUsers.UserName;
             this.Password = sysUsers.Password;
+            systemRoleViewModel = new List<SystemRoleViewModel>();
+            foreach (var item in sysUsers.TSysRoleSysUsers)
+            {
+                SystemRoleViewModel model = new SystemRoleViewModel(item);
+                systemRoleViewModel.Add(model);
+            }
         }
         #endregion
         #region BoToPo

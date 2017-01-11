@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Saas.Office.Auto.IRepository
 {
-    public interface ISysLogsRepository : IRepository<TSysLogs>
+    public interface ISysControllerSysActionsRepository : IRepository<TSysControllerSysActions>
     {
     }
 }

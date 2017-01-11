@@ -51,8 +51,15 @@
     <Compile Include="Infrastructure\IDatabaseFactory.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="ISysActionsRepository.cs" />
+    <Compile Include="ISysAreasRepository.cs" />
+    <Compile Include="ISysControllersRepository.cs" />
+    <Compile Include="ISysControllerSysActionsRepository.cs" />
     <Compile Include="ISysEnterpriseRepository.cs" />
     <Compile Include="ISysLogsRepository.cs" />
+    <Compile Include="ISysRolesRepository.cs" />
+    <Compile Include="ISysRoleSysControllerSysActionsRepository.cs" />
+    <Compile Include="ISysRoleSysUsersRepository.cs" />
     <Compile Include="ISysUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\IUtilitiesRepository.cs" />

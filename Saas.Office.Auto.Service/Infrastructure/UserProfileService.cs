@@ -1,9 +1,11 @@
 ﻿using Saas.Office.Auto.IRepository;
+using Saas.Office.Auto.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Saas.Office.Auto.Service.Infrastructure
 {
@@ -48,15 +50,20 @@ namespace Saas.Office.Auto.Service.Infrastructure
         /// get current login user
         /// </summary>
         /// <returns></returns>
-        //public static UserProfileBO GetCurrentUser()
-        //{
-        //    UserProfileBO up = null;
-        //    if (session.IsExistKey(CurentUser))
-        //    {
-        //        up = JSONHelper.DeserializeObject<UserProfileBO>(session[CurentUser].ToString());
-        //    }
-        //    return up;
-        //}
+        public static UserProfileBO GetCurrentUser()
+        {
+            UserProfileBO up = new UserProfileBO();
+            //if (session.IsExistKey(CurentUser))
+            //{
+            //    up = JSONHelper.DeserializeObject<UserProfileBO>(session[CurentUser].ToString());
+            //}
+            var aa = HttpContext.Current.Session["CurrentUser"];
+            var bb = HttpContext.Current.Session["Authorities"];
+            up.CurrentUser = aa as UserLoginViewModel;
+            up.CurrentAuthorities = bb as AuthoritiesViewModel;
+            //up.CurrentUser = HttpContext.Current.Session["CurrentUser"]as UserLoginViewModel ;
+            return up;
+        }
 
         /// <summary>
         /// get current login user according userid

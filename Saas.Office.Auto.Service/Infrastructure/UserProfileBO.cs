@@ -15,7 +15,7 @@ namespace Saas.Office.Auto.Service.Infrastructure
 
         private UserLoginViewModel _userLoginViewModel = null;
 
-        //private AuthoritiesViewModel _authoritiesModel = null;
+        private AuthoritiesViewModel _authoritiesModel = null;
 
         #region Properties
 
@@ -35,17 +35,17 @@ namespace Saas.Office.Auto.Service.Infrastructure
             }
         }
 
-        //public AuthoritiesViewModel CurrentAuthorities
-        //{
-        //    get
-        //    {
-        //        return _authoritiesModel;
-        //    }
-        //    set
-        //    {
-        //        _authoritiesModel = value;
-        //    }
-        //}
+        public AuthoritiesViewModel CurrentAuthorities
+        {
+            get
+            {
+                return _authoritiesModel;
+            }
+            set
+            {
+                _authoritiesModel = value;
+            }
+        }
         #endregion
 
         public UserProfileBO()
@@ -56,26 +56,10 @@ namespace Saas.Office.Auto.Service.Infrastructure
         public UserProfileBO(int _sysUserId)
         {
             var _sysUserService = DependencyResolver.Current.GetService<ISysUserService>();
+            var _authorizedService = DependencyResolver.Current.GetService<IAuthorizedService>();
             this._userLoginViewModel = _sysUserService.GetUserModel(_sysUserId);
             this._sysUserId = this._userLoginViewModel.Id;
-
-            //var _authorizedService = DependencyResolver.Current.GetService<IAuthorizedService>();
-            //this._authoritiesModel = _authorizedService.GetAuthoritiesViewModel(_sysUserModel);
+            this._authoritiesModel = _authorizedService.GetAuthoritiesViewModel(_userLoginViewModel);
         }
-
-        //public void CreateUserProfileBO()
-        //{
-        //    var _sysUserService = DependencyResolver.Current.GetService<ISysUserService>();
-        //    //Load customerId from Cookie
-        //    this._sysUserId = UserCookie.GetSysUserIdFromCookie();
-        //    this._sysUserModel = _sysUserService.GetSysUserModel(_sysUserId);
-        //    if (this._sysUserModel != null)
-        //    {
-        //        this._sysUserId = this._sysUserModel.id;
-        //    }
-
-        //    var _authorizedService = DependencyResolver.Current.GetService<IAuthorizedService>();
-        //    this._authoritiesModel = _authorizedService.GetAuthoritiesViewModel(_sysUserId);
-        //}
     }
 }

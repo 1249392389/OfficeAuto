@@ -63,7 +63,14 @@
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysActionsRepository.cs" />
+    <Compile Include="SysAreasRepository.cs" />
+    <Compile Include="SysControllersRepository.cs" />
+    <Compile Include="SysControllerSysActionRepository.cs" />
     <Compile Include="SysEnterpriseRepository.cs" />
+    <Compile Include="SysRolesRepository.cs" />
+    <Compile Include="SysRoleSysControllerSysActionsRepository.cs" />
+    <Compile Include="SysRoleSysUsersRepository.cs" />
     <Compile Include="SysUserRepository.cs" />
     <Compile Include="Utilities\UtilitiesRepository.cs" />
   </ItemGroup>

@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAuthorizedService.cs" />
     <Compile Include="ISysEnterpriseService.cs" />
     <Compile Include="ISysUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

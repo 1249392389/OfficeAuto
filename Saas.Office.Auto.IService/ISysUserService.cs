@@ -11,5 +11,6 @@ namespace Saas.Office.Auto.IService
     {
         bool Login(UserLoginViewModel model, bool rememberState);
         UserLoginViewModel GetUserModel(int id);
+        bool AuthorizeUserMenu(Dictionary<string, string> menu);
     }
 }

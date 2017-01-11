@@ -25,10 +25,11 @@ namespace Saas.Office.Auto.Web.Areas.AdminLogin.Controllers
         [HttpPost]
         public ActionResult Index(UserLoginViewModel model)
         {
+            Session["CurrentUser"] = model;
             bool rememberState = model.RememberState;
             //ISysUserService _sysuserservice = new SysUserService();
             bool isLogin = _sysuserservice.Login(model, rememberState);
-            var aa = Session["ValidateCode"].ToString();
+            var ValidateCode = Session["ValidateCode"].ToString();
             if (model.ValidateCode != Session["ValidateCode"].ToString())
             {
                 return Content("<script>alert('验证码输入有误')</script>");

@@ -191,6 +191,7 @@
     <Compile Include="App_Start\FrameworkConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\Webstack\UserAuthorizeAttribute.cs" />
     <Compile Include="Areas\AdminLogin\AdminLoginAreaRegistration.cs" />
     <Compile Include="Areas\AdminLogin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Areas\Admin\Controllers\HeaderController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -5927,6 +5929,7 @@
     <Folder Include="Content\Saas.Office.Auto\assets\apps\img\" />
     <Folder Include="Content\Saas.Office.Auto\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

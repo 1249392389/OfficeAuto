@@ -49,9 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthoritiesViewModel.cs" />
     <Compile Include="PagerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EnterpriseManagementViewModel.cs" />
+    <Compile Include="SystemRoleViewModel.cs" />
     <Compile Include="UserLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
