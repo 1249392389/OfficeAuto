@@ -31,6 +31,14 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
                 return PartialView("_PartialIndex", pagelist);
             return View(pagelist);
         }
+        [HttpPost]
+        public ActionResult Index(EnterpriseManagementSearchModel model,int pageNum =1)
+        {
+            PagedList<EnterpriseManagementViewModel> pagelist = _sysEnterpriseService.SearchHandle(model, pageNum);
+            if (Request.IsAjaxRequest())
+                return PartialView("_PartialIndex", pagelist);
+            return View(pagelist);
+        }
         #region Add
         //[HttpPost]
         public PartialViewResult ShowPop()

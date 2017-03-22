@@ -11,7 +11,7 @@ namespace Saas.Office.Auto.Web.App_Start
     {
         public static void Init()
         {
-            InitAutoFacContainer();
+            InitAutoFacContainer();//初始化AutoFac
             ConfigUtils.LoadConfiguration();
         }
         private static void InitAutoFacContainer()
