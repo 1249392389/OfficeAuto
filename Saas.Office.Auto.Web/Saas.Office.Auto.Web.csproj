@@ -196,10 +196,13 @@
     <Compile Include="Areas\AdminLogin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ActionModuleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentManagementController.cs" />
     <Compile Include="Areas\Admin\Controllers\EnterpriseManagementController.cs" />
     <Compile Include="Areas\Admin\Controllers\HeaderController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleManagementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserManagementController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -4758,7 +4761,10 @@
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\logo-big-white.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\logo-big.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\logo-default.png" />
+    <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\logo-user.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\logo.png" />
+    <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\logo1.png" />
+    <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\logo1副本.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\menu-toggler.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\photo1.jpg" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\photo2.jpg" />
@@ -4783,6 +4789,7 @@
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\sidebar_toggler_icon_grey.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\sidebar_toggler_icon_light.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\sidebar_toggler_icon_light2.png" />
+    <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\img\未标题-1.png" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\scripts\demo.js" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\scripts\demo.min.js" />
     <Content Include="Content\Saas.Office.Auto\assets\layouts\layout2\scripts\layout.js" />
@@ -5513,7 +5520,7 @@
     <Content Include="Content\Saas.Office.Auto\assets\pages\scripts\ui-tree.min.js" />
     <Content Include="Content\Saas.Office.Auto\assets\pages\scripts\widgets.js" />
     <Content Include="Content\Saas.Office.Auto\assets\pages\scripts\widgets.min.js" />
-    <Content Include="Content\Saas.Office.Auto\logo.png" />
+    <Content Include="Content\Saas.Office.Auto\assets\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -5891,9 +5898,14 @@
     </Content>
     <Content Include="Areas\Admin\Views\EnterpriseManagement\Index.cshtml" />
     <Content Include="Areas\Admin\Views\EnterpriseManagement\_PartialIndex.cshtml" />
-    <Content Include="Areas\Admin\Views\EnterpriseManagement\PopAdd.cshtml" />
-    <Content Include="Areas\Admin\Views\EnterpriseManagement\_PartialAdd.cshtml" />
+    <Content Include="Areas\AdminLogin\Views\Login\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\EnterpriseManagement\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\EnterpriseManagement\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\EnterpriseManagement\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DepartmentManagement\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DepartmentManagement\_PartialIndex.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\canvas-nest.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -5921,11 +5933,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\AuthError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdminLogin\Models\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\RoleManagement\" />
+    <Folder Include="Areas\Admin\Views\UserManagement\" />
     <Folder Include="Content\Saas.Office.Auto\assets\apps\img\" />
     <Folder Include="Content\Saas.Office.Auto\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />

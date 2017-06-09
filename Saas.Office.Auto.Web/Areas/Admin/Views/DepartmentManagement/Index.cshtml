@@ -1,5 +1,5 @@
 ﻿@using Webdiyer.WebControls.Mvc
-@model PagedList<Saas.Office.Auto.Model.EnterpriseManagementViewModel>
+@model PagedList<Saas.Office.Auto.Model.DepartmentManagementViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -12,7 +12,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <span>企业管理</span>
+            <span>部门管理</span>
         </li>
     </ul>
 </div>
@@ -27,32 +27,17 @@
                             <button class="btn btn-default" control-name="importexcel">
                                 导出数据
                             </button>
-                            @*<a id="addBtn" class="btn sbold green" href="/Admin/EnterpriseManagement/ShowPop" data-ajax-update="#modeldialog" data-ajax-success="AddAccountHandler"
-                               data-ajax-mode="replace" data-ajax-method="Post" data-ajax="true">
-                                添加
-                                <i class="fa fa-plus"></i>
-                            </a>*@
-                            <a id="addBtn" href="/Admin/EnterpriseManagement/Create" class="btn sbold green" control-name="add">
-                                添加
-                                <i class="fa fa-plus"></i>
-                            </a>
-                            @*@Ajax.ActionLink("添加", "ShowPop", "EnterpriseManagement", new AjaxOptions() { HttpMethod = "Post", UpdateTargetId = "modeldialog", OnSuccess = "AddAccountHandler" }
-                                , new { @class = "btn sbold green", area = "Admin" })*@
-                            <a id="delBtn" class="btn sbold red">
-                                删除
-                                <i class="fa fa-times"></i>
-                            </a>
                         </div>
                     </div>
                     @*按钮区结束*@
                     @*查询区开始*@
                     <div class="col-md-7">
                         <div class="pull-right">
-                            @using (Ajax.BeginForm("Index", "EnterpriseManagement", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Update" }, new { id = "Search", area = "Admin" }))
+                            @using (Ajax.BeginForm("Index", "DepartmentManagement", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Update" }, new { id = "Search", area = "Admin" }))
                             {
                                 <label>
                                     企业名称：
-                                    @Html.TextBox("EnterpriseName", "", new { @class = "form-control input-sm input-small input-inline", placeholder = "企业名称" })
+                                    @Html.TextBox("DepartmentName", "", new { @class = "form-control input-sm input-small input-inline", placeholder = "部门名称" })
                                 </label>
                                 <button type="submit" class="btn sbold green">查询</button>
                             }

@@ -59,9 +59,13 @@ namespace Saas.Office.Auto.Service.Infrastructure
             //}
             var aa = HttpContext.Current.Session["CurrentUser"];
             var bb = HttpContext.Current.Session["Authorities"];
-            up.CurrentUser = aa as UserLoginViewModel;
-            up.CurrentAuthorities = bb as AuthoritiesViewModel;
-            //up.CurrentUser = HttpContext.Current.Session["CurrentUser"]as UserLoginViewModel ;
+            if (aa!=null)
+            {
+                up.CurrentUser = aa as UserLoginViewModel;
+                up.CurrentAuthorities = bb as AuthoritiesViewModel;
+            }
+            //up.CurrentUser = aa as UserLoginViewModel;
+            //up.CurrentAuthorities = bb as AuthoritiesViewModel;
             return up;
         }
 

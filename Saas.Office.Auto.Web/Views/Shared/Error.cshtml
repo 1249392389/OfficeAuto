@@ -1,14 +1,38 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-    <title>错误</title>
-</head>
-<body>
-    <hgroup>
-        <h1>错误。</h1>
-        <h2>处理你的请求时出错。</h2>
-    </hgroup>
-</body>
-</html>
+﻿<!-- Bootstrap -->
+@section css{
+    @*<link href="~/Content/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">*@
+
+    <link rel="stylesheet" type="text/css" href="~/Content/css/andon_server_error.css" />
+    }
+@section scripts{
+    @*<script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>*@
+    <script src="~/Content/js/andon_server_error.js" type="text/javascript"> </script>
+}
+@{
+    Layout = "~/Areas/AdminLogin/Views/Shared/_LoginLayout.cshtml";
+
+}
+
+<!--权限不足页面开始-->
+<div class="andon_jurisdiction_box">
+    @*<span class="andon-error h1">Error</span>*@
+    <div class="andon_mainbox ">
+        <img src="~/Content/images/andon_big.png" alt="" />
+        <div class="andon_mainright">
+            <div class="h2"><span>sorry... &nbsp;服务器出错了...</span></div>
+            <div class="h4">您可以通过以下方式继续访问......</div>
+            <a href="#" class="andon-btn btn btn-default">
+                返回首页
+            </a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <img class="andon_paper" src="~/Content/images/andon_jurisdiction_paper.png" alt="" />
+
+    <img class="andon_botany" src="~/Content/images/andon_jurisdiction_botany.png" alt="" />
+
+    <div class="clearfix"></div>
+</div>
+<!--权限不足页面结束-->
+<!--权限不足页面结束-->

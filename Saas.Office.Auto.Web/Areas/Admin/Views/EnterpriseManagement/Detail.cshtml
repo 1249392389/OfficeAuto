@@ -1,0 +1,94 @@
+﻿@model Saas.Office.Auto.Model.EnterpriseManagementViewModel
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="/Admin/Home/Index">平台企业</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a href="~/Admin/EnterpriseManagement/Index">企业管理</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>详情</span>
+        </li>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light">
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div>
+                        <h4>详情</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.EnterpriseName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EnterpriseName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.MaxUser)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MaxUser)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.EnterpriseCode)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EnterpriseCode)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Validity)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Validity)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.IsEnabled)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.IsEnabled)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.CreatedDate)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.CreatedDate)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <p>
+                        <a href="/Admin/EnterpriseManagement/Edit/@Model.Id">
+                            <input type="button" value="编辑" class="btn btn-default" />
+                        </a>
+                        <a href="/Admin/EnterpriseManagement/Index">
+                            <input type="button" value="返回" class="btn btn-default" />
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

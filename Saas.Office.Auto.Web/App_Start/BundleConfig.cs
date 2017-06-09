@@ -41,7 +41,8 @@ namespace Saas.Office.Auto.Web
             bundles.Add(new ScriptBundle("~/Content/js/layout").Include(
                 "~/Content/Saas.Office.Auto/assets/layouts/layout2/scripts/layout.min.js",
                 "~/Content/Saas.Office.Auto/assets/layouts/layout2/scripts/demo.min.js",
-                "~/Content/Saas.Office.Auto/assets/layouts/global/scripts/quick-sidebar.min.js"
+                "~/Content/Saas.Office.Auto/assets/layouts/global/scripts/quick-sidebar.min.js",
+                "~/Content/Saas.Office.Auto/assets/layouts/global/scripts/quick-nav.min.js"
                 ));
             bundles.Add(new ScriptBundle("~/Content/js/plugins/datatables").Include(
                 "~/Content/Saas.Office.Auto/assets/global/scripts/datatable.js",
@@ -65,7 +66,8 @@ namespace Saas.Office.Auto.Web
 
             bundles.Add(new StyleBundle("~/Content/css/global/style").Include(
                       "~/Content/Saas.Office.Auto/assets/global/css/components.min.css",
-                      "~/Content/Saas.Office.Auto/assets/global/css/plugins.min.css"));
+                      "~/Content/Saas.Office.Auto/assets/global/css/plugins.min.css",
+                      "~/Content/Saas.Office.Auto/assets/pages/css/about.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/global/layout").Include(
                       "~/Content/Saas.Office.Auto/assets/layouts/layout2/css/layout.min.css",

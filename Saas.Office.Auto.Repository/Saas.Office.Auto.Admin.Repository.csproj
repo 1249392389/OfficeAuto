@@ -67,6 +67,7 @@
     <Compile Include="SysAreasRepository.cs" />
     <Compile Include="SysControllersRepository.cs" />
     <Compile Include="SysControllerSysActionRepository.cs" />
+    <Compile Include="SysDepartmentRepository.cs" />
     <Compile Include="SysEnterpriseRepository.cs" />
     <Compile Include="SysRolesRepository.cs" />
     <Compile Include="SysRoleSysControllerSysActionsRepository.cs" />

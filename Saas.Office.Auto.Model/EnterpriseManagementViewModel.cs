@@ -39,14 +39,18 @@ namespace Saas.Office.Auto.Model
         }
         #endregion
         #region BoToPo
-        //public TSysUsers GetModel()
-        //{
-        //    TSysUsers sysUser = new TSysUsers();
-        //    sysUser.Id = this.Id;
-        //    sysUser.UserName = this.UserName;
-        //    sysUser.Password = this.Password;
-        //    return sysUser;
-        //}
+        public TSysEnterprises GetModel()
+        {
+            TSysEnterprises sysEnterprise = new TSysEnterprises();
+            sysEnterprise.Id = this.Id;
+            sysEnterprise.EnterpriseName = this.EnterpriseName;
+            sysEnterprise.MaxUser = this.MaxUser;
+            sysEnterprise.EnterpriseCode = this.EnterpriseCode;
+            sysEnterprise.Validity = this.Validity;
+            sysEnterprise.IsEnabled = this.IsEnabled;
+            sysEnterprise.CreatedDate = this.CreatedDate;
+            return sysEnterprise;
+        }
         #endregion
     }
     public class EnterpriseManagementSearchModel

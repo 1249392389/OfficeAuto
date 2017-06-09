@@ -1,5 +1,4 @@
-﻿using Saas.Office.Auto.Web.Controllers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
 {
-    //主页
-    public class HomeController : BaseController
+    public class RoleManagementController : Controller
     {
-        // GET: Admin/Home
+        //平台企业——角色管理
+        // GET: Admin/RoleManagement
         public ActionResult Index()
         {
             return View();

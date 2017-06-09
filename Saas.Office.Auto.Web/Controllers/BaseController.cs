@@ -34,23 +34,23 @@ namespace Saas.Office.Auto.Web.Controllers
         /// </summary>
         /// <param name="pageName">当前页面controllerName</param>
         /// <returns></returns>
-        //[HttpPost]
-        //public JsonResult GetAuthorByPageNames(List<string> pageName)
-        //{
-        //    List<RouteChildViewModel> resultItems = new List<RouteChildViewModel>();
-        //    if (Request.IsAjaxRequest())
-        //    {
-        //        if (pageName != null && pageName.Count > 0)
-        //        {
-        //            foreach (var item in pageName)
-        //            {
-        //                RouteChildViewModel tempItem = AuthorizedService.GetAuthoritiesViewModel(item);
-        //                resultItems.Add(tempItem);
-        //            }
-        //        }
-        //    }
-        //    return Json(resultItems);
-        //}
+        [HttpPost]
+        public JsonResult GetAuthorByPageNames(List<string> pageName)
+        {
+            List<RouteChildViewModel> resultItems = new List<RouteChildViewModel>();
+            if (Request.IsAjaxRequest())
+            {
+                if (pageName != null && pageName.Count > 0)
+                {
+                    foreach (var item in pageName)
+                    {
+                        RouteChildViewModel tempItem = AuthorizedService.GetAuthoritiesByController(item);
+                        resultItems.Add(tempItem);
+                    }
+                }
+            }
+            return Json(resultItems);
+        }
 
         /// <summary>
         /// 系统异常返回页面

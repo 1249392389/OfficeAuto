@@ -25,20 +25,41 @@ namespace Saas.Office.Auto.Web.Areas.AdminLogin.Controllers
         [HttpPost]
         public ActionResult Index(UserLoginViewModel model)
         {
+            if (model.UserName==null)
+            {
+                Response.Write("<script>alert('用户名不能为空！')</script>");
+                return View();
+            }
+            if (model.Password == null)
+            {
+                Response.Write("<script>alert('密码不能为空！')</script>");
+                return View();
+            }
             Session["CurrentUser"] = model;
             bool rememberState = model.RememberState;
-            //ISysUserService _sysuserservice = new SysUserService();
             bool isLogin = _sysuserservice.Login(model, rememberState);
             var ValidateCode = Session["ValidateCode"].ToString();
-            if (model.ValidateCode != Session["ValidateCode"].ToString())
-            {
-                return Content("<script>alert('验证码输入有误')</script>");
-            }
             if (!isLogin)
             {
-                return Content("<script>alert('登录失败')</script>");
+                Response.Write("<script>alert('用户名或密码输入错误！')</script>");
+                return View();
+            }
+            if (model.ValidateCode != Session["ValidateCode"].ToString())
+            {
+                Response.Write("<script>alert('验证码输入有误')</script>");
+                return View();
             }
             return RedirectToAction("Index", "Home", new { area = "Admin" });
+        }
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Register(UserRegisterViewModel model)
+        {
+
+            return View();
         }
         public virtual ActionResult VerifyImage()
         {

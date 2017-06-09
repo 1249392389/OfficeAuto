@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
 {
+    //模板页Header
     public class HeaderController : Controller
     {
         // GET: Admin/Header

@@ -8,8 +8,8 @@
             {
                 if (item.controllerId == "1")
                 {
-                    <li class="nav-item start active open">
-                        <a href="@Url.Action("Index",item.controllerName)" class="nav-link nav-toggle">
+                    <li class="nav-item"><!-- nav-item start active open-->
+                        <a href="@Url.Action("Index", item.controllerName)" class="nav-link nav-toggle">
                             <i class="@item.icon"></i>
                             <span class="title">@item.menuName</span>
                             <span class="selected"></span>
@@ -19,25 +19,37 @@
                 }
                 else
                 {
-                    <li class="nav-item">
+                    <li class="@(item.isSelected ? "nav-item active open" : "nav-item")">
                         <a href="javascript:;" class="nav-link nav-toggle">
                             <i class="@item.icon"></i>
                             <span class="title">@item.menuName</span>
+                            @if (item.isSelected)
+                            {
+                                <span class="selected"></span>
+                            }
                             <span class="arrow"></span>
                         </a>
-                        <ul class="sub-menu">
-                            @foreach (var childItem in item.childViewModel.OrderBy(a => a.controllerId))
-                            {
-                                <li class="nav-item  ">
-                                    @foreach (var actionitem in childItem.actionViewModel.Where(a => a.actionName.Trim().ToLower() == "index"))
-                                    {
-                                        <a class="nav-link " href="@Url.Action(actionitem.actionName, childItem.controllerName, new { area = headerItem.areaName, selfid = childItem.controllerId, parentid = item.controllerId })">
-                                            <span class="title">@childItem.menuName</span>
-                                        </a>
-                                    }
-                                </li>
-                            }
-                        </ul>
+                        @if (item.childViewModel != null)
+                        {
+                            <ul class="sub-menu">
+                                @foreach (var childItem in item.childViewModel.OrderBy(a => a.controllerId))
+                                {
+                                    <li class="@(childItem.isSelected ? "nav-item  active open" : "nav-item")">
+                                        @foreach (var actionitem in childItem.actionViewModel.Where(a => a.actionName.Trim().ToLower() == "index"))
+                                        {
+                                            <a class="nav-link " href="@Url.Action(actionitem.actionName, childItem.controllerName, new { area = headerItem.areaName, selfid = childItem.controllerId, parentid = item.controllerId })">
+                                                <span class="title">@childItem.menuName</span>
+                                                @if (childItem.isSelected)
+                                                {
+                                                    <span class="selected"></span>
+                                                }
+                                            </a>
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        }
+
                     </li>
                 }
             }

@@ -50,6 +50,10 @@ namespace Saas.Office.Auto.Model
         /// </summary>
         public string controllerName { set; get; }
         /// <summary>
+        /// 控制器是否选定
+        /// </summary>
+        public bool isSelected { set; get; }
+        /// <summary>
         /// 控制器自连接
         /// </summary>
         public List<RouteChildViewModel> childViewModel { set; get; }

@@ -50,11 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthoritiesViewModel.cs" />
+    <Compile Include="DepartmentManagementViewModel.cs" />
     <Compile Include="PagerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EnterpriseManagementViewModel.cs" />
     <Compile Include="SystemRoleViewModel.cs" />
     <Compile Include="UserLoginViewModel.cs" />
+    <Compile Include="UserRegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Saas.Office.Auto.DataAccess\Saas.Office.Auto.Admin.DataAccess.csproj">

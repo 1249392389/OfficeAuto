@@ -2,6 +2,7 @@
 using Saas.Office.Auto.IRepository;
 using Saas.Office.Auto.IService;
 using Saas.Office.Auto.Model;
+using Saas.Office.Auto.Service.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Web;
 
 namespace Saas.Office.Auto.Service
 {
-    public class AuthorizedService: IAuthorizedService
+    public class AuthorizedService : IAuthorizedService
     {
         private readonly ISysRoleSysControllerSysActionsRepository _sysRoleSysControllerSysActionsRepository = null;
         private readonly ISysControllerSysActionsRepository _sysControllerSysActionRepository = null;
@@ -123,7 +124,7 @@ namespace Saas.Office.Auto.Service
                     //TSysRoleSysControllerSysActions RoleControllerActionModel = new TSysRoleSysControllerSysActions();
                     //RoleControllerActionModel.SysControllerSysActionId = item.SysControllerSysActionId;
                     //通过TSysRoleSysControllerSysActions表中的SysControllerSysActionId获取所有对象并放入List<TSysControllerSysActions>中
-                    TSysControllerSysActions ControllerActionModel = _sysControllerSysActionRepository.GetById(item.Id);
+                    TSysControllerSysActions ControllerActionModel = _sysControllerSysActionRepository.GetById(item.TSysControllerSysActions.Id);
                     ControllerActionList.Add(ControllerActionModel);
                 }
             }
@@ -242,6 +243,52 @@ namespace Saas.Office.Auto.Service
                 }
             }
             return actionViewModel;
+        }
+        public RouteChildViewModel GetAuthoritiesByController(string controllerName)
+        {
+            RouteChildViewModel result = null;
+            UserProfileBO userProfile = UserProfileService.GetCurrentUser();
+            if (userProfile != null)
+            {
+                List<RouteViewModel> routeItems = userProfile.CurrentAuthorities.routeViewModel;//一个用户名只能用于一个系统area
+                foreach (var item in routeItems)
+                {
+                    List<RouteChildViewModel> routeChildItems = item.routeChildViewModel;
+                    foreach (var childItem in routeChildItems)
+                    {
+                        result = GetRouteChildViewModelByControllerName(childItem, controllerName);
+                        if (result != null)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+        private RouteChildViewModel GetRouteChildViewModelByControllerName(RouteChildViewModel routeChildViewModel, string controllerName)
+        {
+            RouteChildViewModel result = null;
+            if (routeChildViewModel != null && !string.IsNullOrEmpty(controllerName))
+            {
+                if (routeChildViewModel.controllerName.Trim().ToLower() == controllerName.Trim().ToLower())
+                {
+                    result = routeChildViewModel;
+                }
+                else
+                {
+                    List<RouteChildViewModel> routeChildItems = routeChildViewModel.childViewModel;
+                    foreach (var childItem in routeChildItems)
+                    {
+                        result = GetRouteChildViewModelByControllerName(childItem, controllerName);
+                        if (result != null)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }

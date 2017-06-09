@@ -1,0 +1,51 @@
+﻿@model  Saas.Office.Auto.Model.UserRegisterViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminLogin/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="col-md-6 login-container bs-reset">
+    <div class="login-content" style="margin-top:150px">
+        <h1>从这里开始你想要的生活...</h1>
+        <p> 使用OfficeAuto，让你的生活变得更完美！ </p>
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "login-form" }))
+        {
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+                <span>请输入用户名和密码 </span>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <i class="fa fa-user"></i>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control placeholder-no-fix", placeholder = "用户名" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-lock"></i>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-solid placeholder-no-fix", placeholder = "密码" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8 text-right">
+                    <button class="btn green" type="submit">提交</button><i class="m-icon-swapright m-icon-white"></i>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="login-footer">
+        <div class="row bs-reset">
+            <div class="col-xs-5 bs-reset">
+            </div>
+            <div class="col-xs-7 bs-reset">
+                <div class="login-copyright text-right">
+                    <p>Copyright &copy; 王凯 2016</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

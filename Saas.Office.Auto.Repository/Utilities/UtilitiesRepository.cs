@@ -35,7 +35,7 @@ namespace Saas.Office.Auto.Repository.Utilities
         {
             PagerModel<T> resultPage = new PagerModel<T>();
             int pageNum = pagerModel.pageNum ?? 1;
-            int pageSize = 5;
+            int pageSize = 10;
             //if (pagerModel.pageSize.HasValue)
             //{
             //    pageSize = pagerModel.pageSize.Value;

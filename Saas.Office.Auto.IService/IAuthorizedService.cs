@@ -10,6 +10,6 @@ namespace Saas.Office.Auto.IService
     public interface IAuthorizedService
     {
         AuthoritiesViewModel GetAuthoritiesViewModel(UserLoginViewModel sysUserModel);
-        //RouteChildViewModel GetAuthoritiesByController(string controllerName);
+        RouteChildViewModel GetAuthoritiesByController(string controllerName);
     }
 }

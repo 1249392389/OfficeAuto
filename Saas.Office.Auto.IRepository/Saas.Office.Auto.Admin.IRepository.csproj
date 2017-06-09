@@ -55,6 +55,7 @@
     <Compile Include="ISysAreasRepository.cs" />
     <Compile Include="ISysControllersRepository.cs" />
     <Compile Include="ISysControllerSysActionsRepository.cs" />
+    <Compile Include="ISysDepartmentRepository.cs" />
     <Compile Include="ISysEnterpriseRepository.cs" />
     <Compile Include="ISysLogsRepository.cs" />
     <Compile Include="ISysRolesRepository.cs" />

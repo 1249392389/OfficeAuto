@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
 {
+    //模板页——Menu
     public class MenuController : BaseController
     {
         private readonly IAuthorizedService _authorizedService;
@@ -25,10 +26,7 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
         public PartialViewResult SysMenu(RouteViewModel model, string selfid, string parentid)
         {
             UserProfileBO UserInfo = this.userProfileBO;
-            //SysUserModel area = UserProfileService.GetCurrentUser().CurrentUser;
             model.sysUserId = UserInfo.CurrentUser.Id;
-
-            //List<RouteViewModel> headerMenus = _authorizedService.GetMenuViewModel(model.sysUserId);
             List<RouteViewModel> headerMenus = UserInfo.CurrentAuthorities.routeViewModel;
             if (headerMenus != null && headerMenus.Count() > 0)
             {
@@ -37,7 +35,8 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
                     RouteChildViewModel pvm = item.routeChildViewModel.Where(m => m.controllerId == parentid).FirstOrDefault();
                     if (pvm != null)
                     {
-                        pvm.childViewModel.Where(m => m.controllerId == selfid).FirstOrDefault();
+                        pvm.isSelected = true;
+                        pvm.childViewModel.Where(m => m.controllerId == selfid).FirstOrDefault().isSelected=true;
                     }
                 }
 

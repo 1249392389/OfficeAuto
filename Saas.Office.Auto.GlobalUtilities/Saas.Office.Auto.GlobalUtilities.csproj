@@ -83,6 +83,7 @@
     <Compile Include="ValidateCode\ValidateCode_Style7.cs" />
     <Compile Include="ValidateCode\ValidateCode_Style8.cs" />
     <Compile Include="ValidateCode\ValidateCode_Style9.cs" />
+    <Compile Include="WebExt\WebGrab.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

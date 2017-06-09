@@ -11,7 +11,9 @@ namespace Saas.Office.Auto.IService
 {
     public interface ISysEnterpriseService
     {
-        IEnumerable<TSysEnterprises> GetSysEnterpriseList();
         PagedList<EnterpriseManagementViewModel> SearchHandle(EnterpriseManagementSearchModel model, int pageNum);
+        bool Add(EnterpriseManagementViewModel model);
+        bool Update(EnterpriseManagementViewModel model);
+        EnterpriseManagementViewModel GetEnterpriseManagementViewModel(int id);
     }
 }
