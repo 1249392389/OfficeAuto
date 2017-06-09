@@ -191,6 +191,7 @@
     <Compile Include="App_Start\FrameworkConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\Webstack\AntiSqlInjectAttribute.cs" />
     <Compile Include="App_Start\Webstack\UserAuthorizeAttribute.cs" />
     <Compile Include="Areas\AdminLogin\AdminLoginAreaRegistration.cs" />
     <Compile Include="Areas\AdminLogin\Controllers\LoginController.cs" />

@@ -10,6 +10,7 @@ using Saas.Office.Auto.Service;
 using Saas.Office.Auto.DataAccess;
 using Webdiyer.WebControls.Mvc;
 using Saas.Office.Auto.Web.Controllers;
+using Saas.Office.Auto.Web.App_Start.Webstack;
 
 namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
 {
@@ -32,6 +33,7 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
             return View(pagelist);
         }
         [HttpPost]
+        [AntiSqlInject]
         public ActionResult Index(EnterpriseManagementSearchModel model, int pageNum = 1)
         {
             PagedList<EnterpriseManagementViewModel> pagelist = _sysEnterpriseService.SearchHandle(model, pageNum);
@@ -46,6 +48,7 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
+        [AntiSqlInject]
         [ValidateAntiForgeryToken]
         public ActionResult Create(EnterpriseManagementViewModel model)
         {
@@ -82,6 +85,7 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
             return View(model);
         }
         [HttpPost]
+        [AntiSqlInject]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(EnterpriseManagementViewModel model)
         {

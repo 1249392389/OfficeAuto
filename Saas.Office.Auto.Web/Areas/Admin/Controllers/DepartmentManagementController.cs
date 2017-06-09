@@ -1,6 +1,7 @@
 ﻿using Saas.Office.Auto.IService;
 using Saas.Office.Auto.Model;
 using Saas.Office.Auto.Service;
+using Saas.Office.Auto.Web.App_Start.Webstack;
 using Saas.Office.Auto.Web.Controllers;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace Saas.Office.Auto.Web.Areas.Admin.Controllers
             return View(pagelist);
         }
         [HttpPost]
+        [AntiSqlInject]
         public ActionResult Index(DepartmentManagementSearchModel model, int pageNum = 1)
         {
             PagedList<DepartmentManagementViewModel> pagelist = _sysDepartmentService.SearchHandle(model, pageNum);
